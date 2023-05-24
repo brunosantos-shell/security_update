@@ -27,7 +27,7 @@ then
     echo "Rodar RPM";
 fi
 
-case "$VERIFICA_SO" in Oracle Linux|Red Hat|Centos) 
+case "$VERIFICA_SO" in oracle|hat|centos)
 echo "Oi $VERIFICA_SO";; *) 
 echo "Não te conheço";; 
 esac
