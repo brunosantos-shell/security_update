@@ -20,4 +20,14 @@ checa_internet
 
 VERIFICA_SO=$(cat /etc/*release | grep PRETTY_NAME= | cut -d "=" -f2)
 
-echo $VERIFICA_SO
+#echo $VERIFICA_SO
+
+if [ $VERIFICA_SO = 'oracle' ];
+then
+    echo "Rodar RPM";
+fi
+
+case "$VERIFICA_SO" in Oracle Linux|Red Hat|Centos) 
+echo "Oi $VERIFICA_SO";; *) 
+echo "Não te conheço";; 
+esac
