@@ -22,10 +22,10 @@ VERIFICA_SO=$(cat /etc/*release | grep PRETTY_NAME= | cut -d "=" -f2)
 
 #echo $VERIFICA_SO
 
-if [ $VERIFICA_SO = 'oracle' ];
-then
-    echo "Rodar RPM";
-fi
+#if [ $VERIFICA_SO = 'oracle' ];
+#then
+#    echo "Rodar RPM";
+#fi
 
 case "$VERIFICA_SO" in oracle|hat|centos)
 echo "Oi $VERIFICA_SO";; *) 
