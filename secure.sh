@@ -17,17 +17,11 @@ fi
 
 checa_internet
 
+#VERIFICA_SO=$(cat /etc/*release | grep PRETTY_NAME= | cut -d "=" -f2)
+VERIFICA_SO=$(cat /etc/*release)
 
-VERIFICA_SO=$(cat /etc/*release | grep PRETTY_NAME= | cut -d "=" -f2)
+ 
 
-#echo $VERIFICA_SO
-
-if [ $VERIFICA_SO = 'oracle' ];
-then
-    echo "Rodar RPM";
+if egrep -i -q "(oracle|red|centos)"  <<< "$VERIFICA_SO"; then
+  echo -e "${BLUE}   [CHECK] - Rodar YUM CHECK UPDATE.${NC}"
 fi
-
-#case "$VERIFICA_SO" in oracle|hat|centos)
-#echo "Oi $VERIFICA_SO";; *) 
-#echo "Não te conheço";; 
-#esac
